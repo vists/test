@@ -1,17 +1,18 @@
 # SDK  Tranzzo Tokenizer
 ![](https://img.shields.io/badge/platform-android-brightgreen)
 [![](https://jitpack.io/v/vists/test.svg)](https://jitpack.io/#vists/test)
+
 ## Requirements
 minSdkVersion 16+
 
 ## Installation
-# Gradle
+### Gradle
 ```
 dependencies {
       implementation 'com.github.vists:test:$version'
 }
   ```
-# Maven
+### Maven
 ```
 <dependency>
 	    <groupId>com.github.vists</groupId>
@@ -26,7 +27,8 @@ dependencies {
 **Validation**: Use straightforward card utilities to validate, define and format your card input
 
 ## Usage
-1. Insert in project Tranzzo views
+
+#### 1. Insert in project Tranzzo views
 ```
 <com.tranzzo.android.sdk.view.CardNumberEditText
 .../>
@@ -37,7 +39,7 @@ dependencies {
 <com.tranzzo.android.sdk.view.CvcEditText
 .../>
 ```
-2. Bind views and set in listener
+#### 2. Bind views and set in listener
 ```
 TranzzoInputListener cardInputListener = new TranzzoInputListener(
                 etCardNumber,
@@ -46,7 +48,7 @@ TranzzoInputListener cardInputListener = new TranzzoInputListener(
                 () -> btnTokenize.setEnabled(true)
         );
 ```
-3. Create methods for collect data card
+#### 3. Create methods for collect data card
 ```
  private Either<TrzError, Card> collectCard() {
         return etCardNumber
@@ -64,7 +66,7 @@ TranzzoInputListener cardInputListener = new TranzzoInputListener(
     }
 ```
     
- 4. Add validate method
+ #### 4. Add validate method
  
  ```
   if (cardInputListener.isFormValid()) {
@@ -77,7 +79,7 @@ TranzzoInputListener cardInputListener = new TranzzoInputListener(
             }
         });
  ```
- 5. Execute token in background 
+#### 5. Execute token in background 
  ```
    class TokenizeTask extends AsyncTask<Card, Void, Either<TrzError, CardToken>> {
         
@@ -99,8 +101,7 @@ TranzzoInputListener cardInputListener = new TranzzoInputListener(
     
  ```
  
-License
-=======
+## License
 
     Copyright 2013 Square, Inc.
 
